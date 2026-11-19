@@ -7,17 +7,18 @@
 <title>B案 改善版｜株式会社グレース</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
-<link rel="preload" as="image" href="photos/hero-desk.webp" fetchpriority="high">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Noto+Serif+JP:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<link rel="preload" as="image" href="photos/tweezers.webp" fetchpriority="high">
 <script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('js')</script>
 <style>
-:root{--navy:#1B2A47;--navy2:#2A3C5F;--deep:#121B2E;--soft:#F3F5F8;--ink:#1B1F27;--body:#3D4452;--mute:#555D6B;--line:#DDE2E9;--blue:#3A4F7A;--pale:#C9D2E3;--pale2:#DCE2EC;--en:Inter,sans-serif;--gut:clamp(20px,5vw,72px);--head:80px;--edge:max(var(--gut),calc((100vw - 1296px)/2 + var(--gut)))}
+:root{--navy:#1B2A47;--navy2:#2A3C5F;--deep:#121B2E;--soft:#F7F4EE;--ink:#1B1F27;--body:#3D4452;--mute:#555D6B;--line:#E6E0D4;--gold:#8A6D3B;--gold-l:#CDB98F;--serif:'Noto Serif JP',serif;--blue:#3A4F7A;--pale:#C9D2E3;--pale2:#DCE2EC;--en:Inter,sans-serif;--gut:clamp(20px,5vw,72px);--head:80px;--edge:max(var(--gut),calc((100vw - 1296px)/2 + var(--gut)))}
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--head) + 16px)}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 body{margin:0;background:#fff;color:var(--ink);font-family:'Zen Kaku Gothic New',sans-serif;font-size:16px;line-height:1.95;letter-spacing:.03em;overflow-x:clip}
 h1,h2,h3,p,ol,ul,figure,dl,dd{margin:0;padding:0}
 h1,h2,h3{font-weight:700;color:var(--navy);text-wrap:balance}
+h1,h2{font-family:var(--serif);font-weight:500}
 p{text-wrap:pretty}
 ol,ul{list-style:none}
 img{display:block;width:100%;height:100%;object-fit:cover}
@@ -25,10 +26,10 @@ a{color:inherit;text-decoration:none}
 a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offset:3px}
 .wrap{max-width:1296px;margin-inline:auto;padding-inline:var(--gut)}
 .sec{padding-block:clamp(72px,8vw,112px)}
-.en{font-family:var(--en);font-weight:600;font-size:13px;letter-spacing:.18em;color:var(--blue)}
+.en{font-family:var(--en);font-weight:600;font-size:13px;letter-spacing:.18em;color:var(--gold)}
 .h2{margin-top:6px;font-size:clamp(26px,2.6vw,36px);line-height:1.5;letter-spacing:.05em}
 .lead{max-width:720px;margin-top:16px;color:var(--body)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;padding:0 28px;border:1px solid var(--navy);border-radius:6px;font-weight:700;transition:background-color .2s ease-out,color .2s ease-out}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;padding:0 28px;border:1px solid var(--navy);border-radius:10px;font-weight:700;transition:background-color .2s ease-out,color .2s ease-out}
 .btn svg{transition:transform .2s ease-out}
 .btn:hover svg{transform:translateX(4px)}
 .btn-n{background:var(--navy);color:#fff}.btn-n:hover{background:var(--navy2)}
@@ -44,17 +45,17 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 .js [data-d="1"]{transition-delay:.1s}.js [data-d="2"]{transition-delay:.2s}
 
 /* ヘッダー */
-.head{position:sticky;top:0;z-index:20;height:var(--head);display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 var(--gut);background:#fff;border-bottom:1px solid var(--line)}
+.head{position:sticky;top:0;z-index:20;height:var(--head);display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 var(--gut);background:var(--soft);border-bottom:1px solid var(--line)}
 .brand{display:flex;align-items:center;gap:12px;min-height:44px;flex:none}
 .brand b{font-family:var(--en);font-weight:600;font-size:22px;letter-spacing:.16em;color:var(--navy)}
 .brand span{font-size:13px;color:var(--mute)}
 .nav{display:flex;align-items:center;gap:26px;font-size:14px;font-weight:500}
 .nav>a:not(.cta):not(.tel){display:inline-flex;align-items:center;min-height:44px;transition:color .2s ease-out}
-.nav>a:not(.cta):not(.tel):hover{color:var(--blue)}
+.nav>a:not(.cta):not(.tel):hover{color:var(--gold)}
 .tel{display:inline-flex;flex-direction:column;justify-content:center;min-height:44px;line-height:1.25;color:var(--navy)}
 .tel small{font-size:11px;color:var(--mute)}
 .tel b{font-family:var(--en);font-weight:600;font-size:18px;font-variant-numeric:tabular-nums}
-.cta{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;background:var(--navy);color:#fff;border-radius:6px;font-weight:700;transition:background-color .2s ease-out}
+.cta{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;background:var(--navy);color:#fff;border-radius:10px;font-weight:700;transition:background-color .2s ease-out}
 .cta:hover{background:var(--navy2)}
 .menu-btn{display:none;width:44px;height:44px;padding:0;border:0;background:none;color:var(--navy);cursor:pointer}
 .menu-btn svg{display:block;margin:auto}
@@ -64,14 +65,15 @@ dialog li a{display:flex;align-items:center;min-height:64px;border-bottom:1px so
 .menu-close{display:block;margin-left:auto;color:#fff}
 
 /* メインビジュアル */
-.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:max(480px,calc(100svh - var(--head) - 120px))}
+.hero{background:var(--soft);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:max(480px,calc(100svh - var(--head) - 120px))}
 .hero-copy{align-self:center;padding:clamp(40px,6vh,72px) clamp(24px,3vw,48px) clamp(40px,6vh,72px) var(--edge)}
-.hero-en{font-weight:700;font-size:15px;color:var(--blue)}
-.hero h1{margin:14px 0 18px;font-size:clamp(30px,3.2vw,46px);line-height:1.5;letter-spacing:.05em;text-wrap:initial}
+.hero-en{display:flex;align-items:center;gap:12px;font-weight:500;font-size:15px;letter-spacing:.1em;color:var(--gold)}
+.hero-en::before{content:"";width:28px;height:1px;background:var(--gold)}
+.hero h1{margin:14px 0 18px;font-size:clamp(29px,3.2vw,46px);line-height:1.6;letter-spacing:.06em;text-wrap:initial}
 .hero-lead{color:var(--body)}
 .hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.hero-photo{position:relative;min-height:320px;overflow:hidden;background:var(--soft)}
-.hero-photo img{position:absolute;inset:0;object-position:50% 50%}
+.hero-photo{position:relative;min-height:320px;margin-block:clamp(24px,4vh,40px);overflow:hidden;border-radius:24px 0 0 24px;background:var(--line)}
+.hero-photo img{position:absolute;inset:0;object-position:50% 36%}
 @media (max-width:1240px){.hero-lead br{display:none}}
 
 /* 実績の帯 */
@@ -80,20 +82,20 @@ dialog li a{display:flex;align-items:center;min-height:64px;border-bottom:1px so
 .strip dl>div{display:flex;flex-direction:column;justify-content:center;min-height:120px;padding:16px clamp(16px,3vw,44px)}
 .strip dl>div:first-child{padding-left:0}
 .strip dl>div+div{border-left:1px solid #3A4F7A}
-.strip dt{font-size:13px;color:var(--pale)}
-.strip dd{font-family:var(--en);font-weight:600;font-size:clamp(32px,3vw,42px);line-height:1.25;font-variant-numeric:lining-nums tabular-nums}
+.strip dt{font-size:13px;color:var(--gold-l)}
+.strip dd{font-family:var(--serif);font-weight:500;font-size:clamp(32px,3vw,42px);line-height:1.25;font-variant-numeric:lining-nums tabular-nums}
 .strip small{margin-left:5px;font-family:'Zen Kaku Gothic New',sans-serif;font-size:16px;font-weight:700}
 .strip dd.flow{margin-top:6px;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:clamp(16px,1.5vw,20px);line-height:1.5}
 
 /* 会社紹介 */
 .about .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,88px);align-items:center}
-.about figure{aspect-ratio:4/3;overflow:hidden;border-radius:8px;background:var(--soft)}
+.about figure{aspect-ratio:4/3;overflow:hidden;border-radius:16px;background:var(--soft)}
 .about .lead{font-size:17px}
 
 /* 事業内容 */
 .service{background:var(--soft)}
 .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,28px);margin-top:clamp(36px,4vw,56px)}
-.card{overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:8px}
+.card{overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:14px}
 .card figure{aspect-ratio:16/10;overflow:hidden;background:var(--line)}
 .card img{transition:transform .5s ease-out}
 .card:hover img{transform:scale(1.04)}
@@ -103,8 +105,8 @@ dialog li a{display:flex;align-items:center;min-height:64px;border-bottom:1px so
 .card p:last-child{color:var(--body)}
 
 /* OEM */
-.oem-panel{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,88px);align-items:center;padding:clamp(40px,6vw,80px);background:var(--navy);border-radius:12px;color:#fff}
-.oem-panel .en{color:var(--pale)}
+.oem-panel{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,88px);align-items:center;padding:clamp(40px,6vw,80px);background:var(--navy);border-radius:20px;color:#fff}
+.oem-panel .en{color:var(--gold-l)}
 .oem-panel .h2{color:#fff}
 .oem-panel .lead{color:var(--pale2)}
 .oem-panel .btn{margin-top:28px}
@@ -116,20 +118,20 @@ dialog li a{display:flex;align-items:center;min-height:64px;border-bottom:1px so
 /* 会社概要・アクセス */
 .co{background:var(--soft)}
 .co .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,5vw,72px)}
-.tbl{margin-top:28px;padding:8px clamp(20px,2.4vw,32px);background:#fff;border:1px solid var(--line);border-radius:8px}
+.tbl{margin-top:28px;padding:8px clamp(20px,2.4vw,32px);background:#fff;border:1px solid var(--line);border-radius:14px}
 .tbl div{display:grid;grid-template-columns:112px minmax(0,1fr);gap:8px;padding:17px 0;border-bottom:1px solid var(--line)}
 .tbl div:last-child{border-bottom:0}
 .tbl dt{font-weight:700;color:var(--navy)}
-.map{display:block;width:100%;height:322px;margin-top:28px;border:1px solid var(--line);border-radius:8px;background:var(--line)}
+.map{display:block;width:100%;height:322px;margin-top:28px;border:1px solid var(--line);border-radius:14px;background:var(--line)}
 .addr{margin-top:14px}
 
 /* お問い合わせ */
 .contact{background:var(--navy);color:#fff;text-align:center}
-.contact .en{color:var(--pale)}
+.contact .en{color:var(--gold-l)}
 .contact .h2{color:#fff}
 .contact .lead{margin-inline:auto;color:var(--pale2)}
 .c-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:36px;text-align:left}
-.c{display:flex;flex-direction:column;justify-content:center;min-height:112px;padding:16px 26px;background:#fff;color:var(--navy);border-radius:8px;line-height:1.5;transition:background-color .2s ease-out}
+.c{display:flex;flex-direction:column;justify-content:center;min-height:112px;padding:16px 26px;background:#fff;color:var(--navy);border-radius:14px;line-height:1.5;transition:background-color .2s ease-out}
 .c:hover{background:var(--pale2)}
 .c span{font-size:13px;color:var(--mute)}
 .c b{margin-top:2px;font-family:var(--en);font-weight:600;font-size:clamp(21px,2vw,27px);font-variant-numeric:tabular-nums}
@@ -152,7 +154,7 @@ dialog li a{display:flex;align-items:center;min-height:64px;border-bottom:1px so
   .hero{grid-template-columns:minmax(0,1fr);min-height:0}
   .hero-copy{padding:40px var(--gut) 36px}
   .hero h1{font-size:clamp(25px,7vw,38px)}
-  .hero-photo{min-height:0;aspect-ratio:16/10}
+  .hero-photo{min-height:0;aspect-ratio:4/3;margin:0 0 28px var(--gut);border-radius:16px 0 0 16px}
   .strip dl{grid-template-columns:1fr 1fr}
   .strip dl>div{min-height:104px;padding:16px 0 16px 20px}
   .strip dl>div:last-child{grid-column:1/-1;min-height:88px;padding-left:0;border-left:0;border-top:1px solid #3A4F7A}
@@ -194,7 +196,7 @@ dialog li a{display:flex;align-items:center;min-height:64px;border-bottom:1px so
         <a class="btn btn-l" href="#oem">OEM製作について</a>
       </div>
     </div>
-    <figure class="hero-photo"><img src="photos/hero-desk.webp" width="1090" height="1236" alt="ジュエリーのデザイン画を描く職人の手元" fetchpriority="high"></figure>
+    <figure class="hero-photo"><img src="photos/tweezers.webp" width="1200" height="1600" alt="工房で細かな作業をする職人の手元" fetchpriority="high"></figure>
   </section>
 
   <section class="strip" aria-label="グレースの実績">
@@ -226,7 +228,7 @@ dialog li a{display:flex;align-items:center;min-height:64px;border-bottom:1px so
       </div>
       <div class="cards">
         <article class="card" data-r>
-          <figure><img src="photos/engraving-tool.webp" width="1067" height="1600" loading="lazy" decoding="async" alt="工具で細部を加工する手元"></figure>
+          <figure><img src="photos/hero-desk.webp" width="1090" height="1236" loading="lazy" decoding="async" alt="ジュエリーのデザイン画を描く職人の手元"></figure>
           <div><p class="en">01</p><h3>CAD設計・原型製作</h3><p>デザインをCADで立体化し、製作のもととなる原型をつくります。</p></div>
         </article>
         <article class="card" data-r data-d="1">
