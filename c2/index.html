@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>C案 改善版｜株式会社グレース</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Zen+Old+Mincho:wght@400;600&display=swap">
+<link rel="preload" as="image" href="photos/tweezers.webp" fetchpriority="high">
+<script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('js')</script>
+<style>
+:root{--w:#fff;--k:#111;--wine:#8A2B3B;--paper:#F2F0ED;--mute:#55504C;--line:#D9D6D2;--dline:#4A4642;--dtext:#D6D2CD;--dmute:#BDB7B0;--disp:'Bodoni Moda',serif;--gut:clamp(20px,4vw,60px)}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:16px}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--w);color:var(--k);font-family:'Zen Old Mincho',serif;font-size:16px;line-height:2;letter-spacing:.05em;overflow-x:clip}
+h1,h2,h3,p,ol,ul,figure,dl,dd{margin:0;padding:0}
+h1,h2,h3{font-weight:400;text-wrap:balance}
+p{text-wrap:pretty}
+ol,ul{list-style:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+
+/* 動き */
+.js [data-r]{opacity:0;transform:translateY(30px);transition:opacity 1s ease-out,transform 1s ease-out}
+.js [data-r].in{opacity:1;transform:none}
+.js [data-d="1"]{transition-delay:.15s}
+
+/* ヘッダー */
+.head{position:absolute;z-index:10;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:20px var(--gut);color:var(--k)}
+.logo{display:inline-flex;align-items:center;min-height:44px;font-family:var(--disp);font-size:20px;letter-spacing:.2em}
+.nav{display:flex;gap:30px;font-size:14px}
+.nav a{display:inline-flex;align-items:center;min-height:44px;transition:color .2s ease-out}
+.nav a:hover,.nav .on{color:var(--wine)}
+.menu-btn{display:none;width:44px;height:44px;padding:0;border:0;background:none;color:inherit;cursor:pointer}
+.menu-btn svg{display:block;margin:auto}
+dialog{width:100%;max-width:none;height:100%;max-height:none;margin:0;border:0;padding:20px var(--gut);background:var(--k);color:var(--paper)}
+dialog ul{margin-top:48px;font-size:26px;letter-spacing:.14em}
+dialog li a{display:flex;align-items:center;min-height:72px;border-bottom:1px solid var(--dline)}
+.menu-close{display:block;margin-left:auto}
+
+/* メインビジュアル：写真に重なる大きなロゴ */
+.hero{position:relative;min-height:100svh;overflow:hidden;background:var(--w);isolation:isolate}
+.hero-photo{position:absolute;z-index:0;left:37%;top:0;width:clamp(300px,32vw,500px);height:80svh;overflow:hidden}
+.hero-photo img{object-position:50% 40%}
+.js .hero-photo img{animation:settle 2.6s ease-out both}
+@keyframes settle{from{transform:scale(1.1)}to{transform:none}}
+.hero h1{font-size:inherit}
+.hero-logo{position:absolute;z-index:1;left:var(--gut);bottom:clamp(40px,8svh,76px);font-family:var(--disp);font-size:24vw;line-height:.8;letter-spacing:0;white-space:nowrap;color:#fff;mix-blend-mode:difference;pointer-events:none}
+.hero-sub{position:absolute;z-index:2;left:var(--gut);top:clamp(120px,22svh,200px);font-size:clamp(16px,1.5vw,21px);line-height:2;letter-spacing:.16em}
+.hero-sub span{display:block}
+.js .hero-logo{animation:rise 1.2s ease-out both}
+@keyframes rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+
+/* 流れる帯 */
+.band{overflow:hidden;background:var(--k);color:var(--paper);padding:16px 0}
+.band div{display:flex;width:max-content;font-family:var(--disp);font-style:italic;font-size:20px;letter-spacing:.14em;white-space:nowrap}
+.band span{padding-right:64px}
+.js .band div{animation:slide 36s linear infinite}
+.band.off div{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* 言葉 */
+.state{position:relative;background:var(--k);color:var(--paper);padding:clamp(96px,14vw,200px) var(--gut) 0;overflow:hidden}
+.state h2{font-size:clamp(46px,9.4vw,150px);line-height:1.34;letter-spacing:.06em}
+.state-lead{max-width:620px;margin:clamp(40px,5vw,72px) 0 clamp(64px,8vw,112px) auto;color:var(--dtext);font-size:clamp(17px,1.6vw,21px)}
+.state-photo{width:100vw;margin-left:calc(var(--gut)*-1);aspect-ratio:16/8;overflow:hidden}
+@supports (animation-timeline:view()){
+  @media (prefers-reduced-motion:no-preference){
+    .state-photo img{animation:grow linear both;animation-timeline:view();animation-range:entry 0% cover 55%}
+    @keyframes grow{from{transform:scale(1.28)}to{transform:none}}
+    .bleed img{animation:drift linear both;animation-timeline:view()}
+    @keyframes drift{from{transform:translateY(-9%)}to{transform:translateY(9%)}}
+  }
+}
+
+/* 数字 */
+.figs{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding:clamp(96px,12vw,180px) var(--gut)}
+.fig{border-top:1px solid var(--k);padding-top:18px}
+.fig:nth-child(1){grid-column:1/8}
+.fig:nth-child(2){grid-column:8/13;margin-top:clamp(96px,16vw,260px)}
+.fig dt{font-size:14px;letter-spacing:.2em}
+.fig dd{font-family:var(--disp);font-size:clamp(150px,27vw,420px);line-height:1;color:var(--wine);font-variant-numeric:lining-nums}
+.fig p{font-size:clamp(17px,1.5vw,20px)}
+
+/* 事業：写真が切り替わる一覧 */
+.biz{background:var(--k);color:var(--paper);padding:clamp(88px,10vw,140px) var(--gut) 0}
+.biz-h{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 24px;padding-bottom:28px;border-bottom:1px solid var(--dline)}
+.biz-h h2{font-size:clamp(30px,3vw,42px);letter-spacing:.14em}
+.en{font-family:var(--disp);font-style:italic;font-size:clamp(24px,2.6vw,36px);color:var(--dmute)}
+.biz-g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px)}
+.biz-i{display:flex;flex-direction:column;justify-content:center;min-height:82svh;border-bottom:1px solid var(--dline);opacity:.5;transition:opacity .4s ease-out}
+.biz-i:last-child{border-bottom:0}
+.biz-i.on{opacity:1}
+.biz-no{font-family:var(--disp);font-style:italic;font-size:clamp(56px,7vw,104px);line-height:1.1;color:var(--dmute)}
+.biz-i h3{margin:16px 0 12px;font-weight:600;font-size:clamp(26px,3vw,42px);line-height:1.5;letter-spacing:.1em}
+.biz-i p:last-of-type{color:var(--dtext)}
+.biz-i figure{display:none}
+.biz-s{position:sticky;top:9svh;height:82svh;align-self:start;overflow:hidden;margin-top:24px;background:#1b1b1b}
+.biz-s img{position:absolute;inset:0;opacity:0;transform:scale(1.06);transition:opacity .6s ease-out,transform 1.2s ease-out}
+.biz-s img.on{opacity:1;transform:none}
+
+/* 写真の帯 */
+.bleed{height:clamp(320px,70svh,720px);overflow:hidden;margin-top:clamp(64px,8vw,120px)}
+.bleed img{height:120%;margin-top:-10%;filter:grayscale(1)}
+
+/* 会社概要 */
+.co{padding:clamp(72px,9vw,130px) var(--gut) clamp(72px,9vw,120px)}
+.co-title{font-family:var(--disp);font-style:italic;font-size:clamp(84px,17vw,270px);line-height:1;letter-spacing:-.01em}
+.co-g{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:32px;margin-top:clamp(40px,5vw,72px)}
+.co-g h2{font-size:clamp(26px,2.4vw,32px);letter-spacing:.14em}
+.tbl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px}
+.tbl div{padding:20px 0;border-top:1px solid var(--k)}
+.tbl dt{font-size:13px;letter-spacing:.2em;color:var(--mute)}
+.tbl dd{margin-top:4px;font-size:clamp(17px,1.5vw,20px)}
+.access iframe{display:block;width:100%;height:clamp(340px,44vw,560px);border:0;background:#EEECEA;filter:grayscale(1)}
+.access p{padding:16px var(--gut) clamp(64px,8vw,104px);font-size:14px}
+
+/* お問い合わせ */
+.contact{background:var(--wine);color:#fff;padding:clamp(72px,9vw,130px) var(--gut)}
+.contact-l{letter-spacing:.2em}
+.contact h2{font-family:var(--disp);font-style:italic;font-size:clamp(88px,20vw,320px);line-height:1;letter-spacing:-.01em}
+.links{margin-top:clamp(40px,5vw,72px);border-top:1px solid rgba(255,255,255,.45)}
+.links a{display:grid;grid-template-columns:120px minmax(0,1fr) 52px;align-items:center;gap:16px;min-height:100px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.45)}
+.links span{font-size:14px;letter-spacing:.14em}
+.links b{font-weight:400;font-size:clamp(24px,3.4vw,48px);line-height:1.3;letter-spacing:.04em;overflow-wrap:anywhere;font-variant-numeric:lining-nums}
+.links b.mail{font-size:clamp(16px,2.5vw,36px);letter-spacing:.01em}
+.arrow{display:flex;align-items:center;justify-content:center;width:52px;height:52px;border:1px solid #fff;border-radius:50%;transition:background-color .2s ease-out,color .2s ease-out}
+.links a:hover .arrow{background:#fff;color:var(--wine)}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding:28px var(--gut) 36px;background:var(--k);color:var(--dmute);font-size:13px}
+.foot span{white-space:nowrap}
+
+@media (max-width:860px){
+  .nav{display:none}.menu-btn{display:block}
+  .head .menu-btn{background:var(--w)}
+  dialog .menu-btn{background:none}
+  .hero{min-height:100svh}
+  .hero-photo{left:auto;right:0;top:0;width:68vw;height:60svh}
+  .hero-sub{top:calc(60svh + 20px);font-size:14px;letter-spacing:.1em}
+  .hero-logo{font-size:24vw;bottom:32px}
+  .band div{font-size:16px}
+  .state-photo{aspect-ratio:4/3}
+  .figs{display:block}
+  .fig:nth-child(2){margin-top:64px}
+  .fig dd{font-size:46vw}
+  .biz-g{display:block}
+  .biz-s{display:none}
+  .biz-i{min-height:0;padding:44px 0;opacity:1}
+  .biz-i figure{display:block;aspect-ratio:4/3;margin-top:24px;overflow:hidden}
+  .co-g{grid-template-columns:minmax(0,1fr)}
+  .tbl{grid-template-columns:minmax(0,1fr)}
+  .links a{grid-template-columns:minmax(0,1fr) 44px;gap:4px 12px;min-height:104px}
+  .links span{grid-column:1/-1}
+  .links b.mail{font-size:clamp(15px,4.5vw,24px)}
+  .arrow{width:44px;height:44px}
+}
+</style>
+</head>
+<body>
+<header class="head">
+  <a class="logo" href="#top">GRACE</a>
+  <nav class="nav" aria-label="メインメニュー">
+    <a href="#business">事業内容</a><a href="#company">会社概要</a><a href="#access">アクセス</a><a class="on" href="#contact">お問い合わせ</a>
+  </nav>
+  <button class="menu-btn" id="menu-open" type="button" aria-label="メニューを開く"><svg aria-hidden="true" width="26" height="14" viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 1h26M0 13h26"/></svg></button>
+</header>
+<dialog id="menu" aria-label="メインメニュー">
+  <button class="menu-btn menu-close" id="menu-close" type="button" aria-label="メニューを閉じる"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 2l18 18M20 2L2 20"/></svg></button>
+  <ul><li><a href="#business">事業内容</a></li><li><a href="#company">会社概要</a></li><li><a href="#access">アクセス</a></li><li><a href="#contact">お問い合わせ</a></li></ul>
+</dialog>
+
+<main>
+  <section class="hero" id="top">
+    <figure class="hero-photo"><img src="photos/tweezers.webp" width="1200" height="1600" alt="ピンセットで作業する職人の手元" fetchpriority="high"></figure>
+    <h1><span class="hero-logo">GRACE</span><span class="hero-sub"><span>山梨・甲府のジュエリー工房</span><span>株式会社グレース</span></span></h1>
+  </section>
+
+  <div class="band" id="band" aria-hidden="true"><div><span>JEWELRY MANUFACTURING / KOFU, YAMANASHI</span><span>JEWELRY MANUFACTURING / KOFU, YAMANASHI</span><span>JEWELRY MANUFACTURING / KOFU, YAMANASHI</span><span>JEWELRY MANUFACTURING / KOFU, YAMANASHI</span><span>JEWELRY MANUFACTURING / KOFU, YAMANASHI</span><span>JEWELRY MANUFACTURING / KOFU, YAMANASHI</span></div></div>
+
+  <section class="state">
+    <h2 data-r>美しさは、<br>細部に宿る。</h2>
+    <p class="state-lead" data-r>株式会社グレースは、山梨県甲府市でジュエリーの製作・加工を行う会社です。</p>
+    <figure class="state-photo"><img src="photos/ring-minimal.webp" width="1600" height="1067" loading="lazy" decoding="async" alt="シルバーのリング"></figure>
+  </section>
+
+  <dl class="figs">
+    <div class="fig" data-r><dt>工場設立から</dt><dd>31</dd><p>年目を迎えました。</p></div>
+    <div class="fig" data-r data-d="1"><dt>在籍する職人</dt><dd>12</dd><p>名が、シルバーをはじめとする幅広い貴金属を扱っています。</p></div>
+  </dl>
+
+  <section class="biz" id="business">
+    <div class="biz-h"><h2>主な事業</h2><p class="en">Business</p></div>
+    <div class="biz-g">
+      <ol>
+        <li class="biz-i on" data-i="0">
+          <p class="biz-no" aria-hidden="true">No.01</p>
+          <h3>CAD設計・原型製作</h3>
+          <p>デザインをCADで立体化し、製作のもととなる原型をつくります。</p>
+          <figure><img src="photos/design-sketch.webp" width="1600" height="1236" loading="lazy" decoding="async" alt="ジュエリーのデザイン画と原型"></figure>
+        </li>
+        <li class="biz-i" data-i="1">
+          <p class="biz-no" aria-hidden="true">No.02</p>
+          <h3>磨き・石留め</h3>
+          <p>地金の表面を磨いて仕上げ、デザインに合わせて宝石を留めます。</p>
+          <figure><img src="photos/stone-setting-bw.webp" width="1067" height="1600" loading="lazy" decoding="async" alt="リングを手に取る職人の手元"></figure>
+        </li>
+        <li class="biz-i" data-i="2">
+          <p class="biz-no" aria-hidden="true">No.03</p>
+          <h3>OEM製作</h3>
+          <p>ブランドや企業のご依頼に応じて、オリジナルジュエリーを製作します。</p>
+          <figure><img src="photos/ring-box.webp" width="1600" height="1600" loading="lazy" decoding="async" alt="ケースに入ったシルバーのリング"></figure>
+        </li>
+      </ol>
+      <div class="biz-s" aria-hidden="true">
+        <img class="on" src="photos/design-sketch.webp" width="1600" height="1236" loading="lazy" decoding="async" alt="">
+        <img src="photos/stone-setting-bw.webp" width="1067" height="1600" loading="lazy" decoding="async" alt="">
+        <img src="photos/ring-box.webp" width="1600" height="1600" loading="lazy" decoding="async" alt="">
+      </div>
+    </div>
+  </section>
+
+  <figure class="bleed" style="margin-top:0"><img src="photos/lathe-bw.webp" width="1600" height="1600" loading="lazy" decoding="async" alt="旋盤で金属を加工する職人の手元"></figure>
+
+  <section class="co" id="company">
+    <p class="co-title" aria-hidden="true" data-r>Company</p>
+    <div class="co-g" data-r>
+      <h2>会社概要</h2>
+      <dl class="tbl">
+        <div><dt>会社名</dt><dd>株式会社グレース</dd></div>
+        <div><dt>代表者</dt><dd>星山 安奈</dd></div>
+        <div><dt>所在地</dt><dd>〒400-0851<br>山梨県甲府市住吉3-26-16</dd></div>
+        <div><dt>工場・職人</dt><dd>工場設立31年目<br>職人12名</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="access" id="access" aria-label="アクセス">
+    <iframe src="https://maps.google.com/maps?q=%E5%B1%B1%E6%A2%A8%E7%9C%8C%E7%94%B2%E5%BA%9C%E5%B8%82%E4%BD%8F%E5%90%893-26-16&amp;z=16&amp;hl=ja&amp;output=embed" title="株式会社グレースの地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <p>〒400-0851 山梨県甲府市住吉3-26-16</p>
+  </section>
+
+  <section class="contact" id="contact">
+    <p class="contact-l" data-r>製作・加工、OEMのご相談</p>
+    <h2 data-r>Contact</h2>
+    <div class="links" data-r>
+      <a href="tel:0552678944"><span>TEL/FAX</span><b>055-267-8944</b><i class="arrow" aria-hidden="true"><svg width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor"><path d="M0 6h18M13 1l5 5-5 5"/></svg></i></a>
+      <a href="tel:09048269940"><span>携帯</span><b>090-4826-9940</b><i class="arrow" aria-hidden="true"><svg width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor"><path d="M0 6h18M13 1l5 5-5 5"/></svg></i></a>
+      <a href="mailto:grace5k.yamanachi@gmail.com"><span>メール</span><b class="mail">grace5k.yamanachi@gmail.com</b><i class="arrow" aria-hidden="true"><svg width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor"><path d="M0 6h18M13 1l5 5-5 5"/></svg></i></a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>株式会社グレース　<span>〒400-0851 山梨県甲府市住吉3-26-16</span></p>
+  <p>© 2026 株式会社グレース</p>
+</footer>
+
+<script>
+(function(){
+  var d=document,els=d.querySelectorAll('[data-r]'),hasIO='IntersectionObserver' in window;
+  if(!d.documentElement.classList.contains('js')||!hasIO){els.forEach(function(e){e.classList.add('in')})}
+  else{var io=new IntersectionObserver(function(list){list.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.06});els.forEach(function(e){io.observe(e)})}
+  if(hasIO){
+    var items=d.querySelectorAll('.biz-i'),pics=d.querySelectorAll('.biz-s img');
+    function show(n){items.forEach(function(e,i){e.classList.toggle('on',i===n)});pics.forEach(function(e,i){e.classList.toggle('on',i===n)})}
+    var spy=new IntersectionObserver(function(list){list.forEach(function(e){if(e.isIntersecting)show(+e.target.dataset.i)})},{rootMargin:'-45% 0px -45% 0px'});
+    items.forEach(function(e){spy.observe(e)});
+    var band=d.getElementById('band');
+    new IntersectionObserver(function(list){band.classList.toggle('off',!list[0].isIntersecting)}).observe(band);
+  }
+  var m=d.getElementById('menu');
+  d.getElementById('menu-open').addEventListener('click',function(){m.showModal()});
+  d.getElementById('menu-close').addEventListener('click',function(){m.close()});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.close()})});
+})();
+</script>
+</body>
+</html>

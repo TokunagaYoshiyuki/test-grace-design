@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>A案 改善版｜株式会社グレース</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Shippori+Mincho+B1:wght@500;600&display=swap">
+<link rel="preload" as="image" href="photos/hero-polishing.webp" fetchpriority="high">
+<script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('js')</script>
+<style>
+:root{--bg:#fff;--soft:#F5F6F7;--ink:#1C1C1E;--mute:#5F6168;--line:#D5D7DB;--ghost:#EEF0F2;--serif:'Shippori Mincho B1',serif;--sans:'Noto Sans JP',sans-serif;--gut:clamp(20px,5vw,72px);--head:84px}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:24px}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:2;letter-spacing:.04em;overflow-x:clip}
+h1,h2,h3,p,ol,ul,figure,dl,dd{margin:0;padding:0}
+h1,h2,h3{font-family:var(--serif);font-weight:500;text-wrap:balance}
+p{text-wrap:pretty}
+ul,ol{list-style:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.eyebrow{font-size:12px;letter-spacing:.4em;color:var(--mute)}
+.ph{overflow:hidden;background:var(--ghost)}
+
+/* 動き */
+.js [data-r]{opacity:0;transform:translateY(28px);transition:opacity .9s ease-out,transform .9s ease-out}
+.js [data-r].in{opacity:1;transform:none}
+.js .ph[data-r]{transform:none}
+.js .ph[data-r] img{transform:scale(1.1);transition:transform 1.5s ease-out}
+.js .ph[data-r].in img{transform:none}
+.js [data-d="1"]{transition-delay:.12s}
+.js [data-d="2"]{transition-delay:.24s}
+
+/* ヘッダー */
+.head{height:var(--head);display:flex;align-items:center;justify-content:space-between;padding:0 var(--gut);border-bottom:1px solid var(--line)}
+.brand{display:flex;flex-direction:column;line-height:1.3}
+.brand b{font-family:var(--serif);font-weight:500;font-size:24px;letter-spacing:.3em}
+.brand span{font-size:11px;letter-spacing:.2em;color:var(--mute)}
+.nav{display:flex;gap:36px;font-size:14px;letter-spacing:.12em}
+.nav a{position:relative;display:inline-flex;align-items:center;min-height:44px}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:8px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .2s ease-out}
+.nav a:hover::after{transform:scaleX(1)}
+.menu-btn{display:none;width:44px;height:44px;padding:0;border:0;background:none;color:inherit;cursor:pointer}
+.menu-btn svg{display:block;margin:auto}
+dialog{width:100%;max-width:none;height:100%;max-height:none;margin:0;border:0;padding:24px var(--gut);background:var(--bg);color:var(--ink)}
+dialog ul{margin-top:56px;display:grid;gap:8px;font-family:var(--serif);font-size:26px;letter-spacing:.14em}
+dialog li a{display:flex;align-items:center;min-height:64px;border-bottom:1px solid var(--line)}
+.menu-close{display:block;margin-left:auto}
+
+/* メインビジュアル */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) clamp(300px,29vw,440px);min-height:calc(100svh - var(--head))}
+.hero-photo{min-height:520px;position:relative}
+.hero-photo img{position:absolute;inset:0;object-position:50% 58%}
+.js .hero-photo img{animation:settle 2.6s ease-out both}
+@keyframes settle{from{transform:scale(1.07)}to{transform:none}}
+.hero-panel{display:flex;flex-direction:row-reverse;justify-content:center;align-items:flex-start;gap:clamp(28px,3vw,48px);padding:clamp(48px,8vh,88px) 24px}
+.hero-panel h1{writing-mode:vertical-rl;font-size:clamp(40px,4.5vw,66px);line-height:1.55;letter-spacing:.2em}
+.hero-tag{writing-mode:vertical-rl;font-size:13px;letter-spacing:.34em;color:var(--mute);padding-top:6px;border-right:1px solid var(--line);padding-right:12px}
+
+/* ABOUT */
+.about{position:relative;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding:clamp(96px,13vw,190px) var(--gut);isolation:isolate;overflow:clip}
+.ghost{position:absolute;z-index:-1;right:-1vw;top:clamp(20px,4vw,64px);font-family:var(--serif);font-size:clamp(220px,36vw,560px);line-height:1;color:var(--ghost);user-select:none}
+.about-head{grid-column:1/4}
+.about-head h2{margin-top:32px;writing-mode:vertical-rl;font-size:clamp(28px,2.8vw,40px);line-height:1.8;letter-spacing:.2em}
+.about-body{grid-column:4/9;align-self:center}
+.about-body>p{font-size:17px;line-height:2.3}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:72px}
+.stat{border-top:1px solid var(--ink);padding-top:16px;line-height:1.2}
+.stat:nth-child(2){margin-top:56px}
+.stat dt{font-size:12px;letter-spacing:.2em;color:var(--mute)}
+.stat dd{margin-top:12px;font-family:var(--serif);font-size:clamp(72px,8vw,116px);line-height:1;font-variant-numeric:lining-nums}
+.stat small{margin-left:6px;font-size:20px}
+.about-photo{grid-column:10/13;align-self:end;aspect-ratio:3/4}
+
+/* 事業 */
+.biz{display:grid;grid-template-columns:clamp(64px,10vw,150px) minmax(0,1fr);background:var(--soft);padding:clamp(88px,11vw,160px) 0 clamp(88px,11vw,160px) var(--gut)}
+.biz-side{position:relative}
+.biz-side div{position:sticky;top:48px;display:flex;flex-direction:row-reverse;justify-content:flex-end;gap:12px}
+.biz-side h2{writing-mode:vertical-rl;font-size:clamp(30px,3vw,44px);letter-spacing:.24em;line-height:1.2}
+.biz-side .eyebrow{writing-mode:vertical-rl}
+.biz-list{display:grid;gap:clamp(96px,12vw,180px)}
+.no{font-family:var(--serif);font-size:clamp(64px,7vw,104px);line-height:1;color:#868A92;font-variant-numeric:lining-nums}
+.biz h3{margin:20px 0 16px;font-size:clamp(24px,2.3vw,32px);line-height:1.6;letter-spacing:.12em}
+.b1 .ph{aspect-ratio:16/8.4}
+.b1 .card{position:relative;width:min(540px,calc(100% - 24px));margin:-140px 0 0 clamp(0px,4vw,64px);padding:clamp(32px,4vw,56px);background:var(--bg)}
+.b2{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding-right:var(--gut);align-items:end}
+.b2 .txt{grid-column:1/6;padding-bottom:64px}
+.b2 .big{grid-column:7/13;grid-row:1;aspect-ratio:4/5}
+.b2 .sm{grid-column:5/8;grid-row:1;align-self:end;aspect-ratio:3/4;margin-bottom:-56px;position:relative;z-index:1;border:10px solid var(--soft)}
+.b3{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding-right:var(--gut);align-items:center}
+.b3 .ph{grid-column:1/8;aspect-ratio:1/1}
+.b3 .txt{grid-column:9/13}
+
+/* 会社概要・アクセス */
+.co{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.co-info{padding:clamp(88px,10vw,150px) clamp(32px,6vw,96px) clamp(88px,10vw,150px) var(--gut)}
+.co h2{margin:12px 0 40px;font-size:clamp(28px,2.6vw,36px);letter-spacing:.16em}
+.tbl{border-top:1px solid var(--ink)}
+.tbl div{display:grid;grid-template-columns:128px minmax(0,1fr);gap:8px;padding:22px 0;border-bottom:1px solid var(--line)}
+.tbl dt{color:var(--mute)}
+.co-map{position:relative;display:flex;flex-direction:column;background:var(--soft)}
+.co-map-h{padding:clamp(56px,6vw,88px) var(--gut) 0 clamp(32px,4vw,64px)}
+.co-map-h h2{margin-bottom:24px}
+.co-map iframe{flex:1;display:block;width:100%;min-height:380px;border:0;background:#ECEDEF}
+.addr{padding:20px clamp(32px,4vw,64px);font-size:14px}
+
+/* お問い合わせ */
+.contact{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(40px,9vw,160px);background:var(--ink);color:#fff;padding:clamp(88px,11vw,160px) var(--gut)}
+.contact h2{writing-mode:vertical-rl;font-size:clamp(44px,6.4vw,96px);line-height:1.1;letter-spacing:.14em}
+.contact .eyebrow{color:#A9ACB2;margin-bottom:20px}
+.contact-lead{font-size:17px;margin-bottom:48px;color:#E3E4E7}
+.links{border-top:1px solid #4A4B50}
+.links a{display:grid;grid-template-columns:96px minmax(0,1fr) 28px;align-items:center;gap:16px;min-height:104px;padding:16px 0;border-bottom:1px solid #4A4B50;transition:color .2s ease-out}
+.links span{font-size:13px;letter-spacing:.14em;color:#A9ACB2}
+.links b{font-family:var(--serif);font-weight:500;font-size:clamp(24px,3.2vw,44px);line-height:1.3;letter-spacing:.06em;overflow-wrap:anywhere;font-variant-numeric:lining-nums}
+.links b.mail{font-size:clamp(17px,2.3vw,32px);letter-spacing:.02em}
+.links svg{transition:transform .2s ease-out}
+.links a:hover svg{transform:translateX(6px)}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;background:var(--ink);color:#C9CBD0;padding:32px var(--gut) 40px;font-size:13px;border-top:1px solid #34353A}
+.foot b{display:block;font-family:var(--serif);font-weight:500;font-size:20px;letter-spacing:.3em;color:#fff}
+.foot p:last-child{align-self:flex-end;color:#A9ACB2}
+
+@media (max-width:900px){
+  :root{--head:72px}
+  .nav{display:none}.menu-btn{display:block}
+  .hero{grid-template-columns:minmax(0,1fr);min-height:0}
+  .hero-photo{min-height:62svh}
+  .hero-panel{position:relative;width:fit-content;margin:-110px 16px 0 auto;padding:32px 24px;background:var(--bg);gap:20px}
+  .hero-panel h1{font-size:34px}
+  .about{display:block}
+  .ghost{font-size:62vw;top:32px}
+  .about-head h2{writing-mode:horizontal-tb;margin:16px 0 28px;letter-spacing:.12em}
+  .about-photo{width:62%;margin:56px 0 0 auto}
+  .stats{margin-top:48px}
+  .stat:nth-child(2){margin-top:32px}
+  .biz{grid-template-columns:minmax(0,1fr);padding-right:0}
+  .biz-side{margin-bottom:48px}
+  .biz-side div{position:static;flex-direction:column;gap:12px}
+  .biz-side h2,.biz-side .eyebrow{writing-mode:horizontal-tb}
+  .b1 .card{width:calc(100% - 24px);margin:-56px 0 0}
+  .b2,.b3{display:block}
+  .b2 .big{width:82%;margin-left:auto}
+  .b2 .sm{width:42%;margin:-96px 0 0;}
+  .b2 .txt{padding:0 0 32px}
+  .b3 .ph{margin-bottom:32px;margin-left:calc(var(--gut)*-1);width:calc(100% + var(--gut))}
+  .co{grid-template-columns:minmax(0,1fr)}
+  .co-info{padding-right:var(--gut)}
+  .co-map-h,.addr{padding-left:var(--gut)}
+  .tbl div{grid-template-columns:96px minmax(0,1fr)}
+  .contact{grid-template-columns:minmax(0,1fr)}
+  .contact h2{writing-mode:horizontal-tb;font-size:40px}
+  .links a{grid-template-columns:minmax(0,1fr) 28px;min-height:96px}
+  .links span{grid-column:1/-1}
+  .links b.mail{font-size:clamp(15px,4.6vw,24px)}
+}
+</style>
+</head>
+<body>
+<header class="head">
+  <a class="brand" href="#top"><b>GRACE</b><span>株式会社グレース</span></a>
+  <nav class="nav" aria-label="メインメニュー">
+    <a href="#business">事業内容</a><a href="#company">会社概要</a><a href="#access">アクセス</a><a href="#contact">お問い合わせ</a>
+  </nav>
+  <button class="menu-btn" id="menu-open" type="button" aria-label="メニューを開く"><svg aria-hidden="true" width="26" height="14" viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 1h26M0 13h26"/></svg></button>
+</header>
+<dialog id="menu" aria-label="メインメニュー">
+  <button class="menu-btn menu-close" id="menu-close" type="button" aria-label="メニューを閉じる"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 2l18 18M20 2L2 20"/></svg></button>
+  <ul><li><a href="#business">事業内容</a></li><li><a href="#company">会社概要</a></li><li><a href="#access">アクセス</a></li><li><a href="#contact">お問い合わせ</a></li></ul>
+</dialog>
+
+<main>
+  <section class="hero" id="top">
+    <div class="hero-photo ph"><img src="photos/hero-polishing.webp" width="1600" height="1200" alt="宝石を磨く職人の手元" fetchpriority="high"></div>
+    <div class="hero-panel">
+      <h1>職人の手が、<br>光を生む。</h1>
+      <p class="hero-tag">山梨・甲府のジュエリー工房</p>
+    </div>
+  </section>
+
+  <section class="about">
+    <span class="ghost" aria-hidden="true">31</span>
+    <div class="about-head" data-r>
+      <p class="eyebrow">ABOUT</p>
+      <h2>甲府の地で、<br>31年目のものづくり。</h2>
+    </div>
+    <div class="about-body">
+      <p data-r>株式会社グレースは、山梨県甲府市でジュエリーの製作・加工を行う会社です。工場設立から31年目を迎え、12名の職人がシルバーをはじめとする幅広い貴金属を扱っています。</p>
+      <dl class="stats">
+        <div class="stat" data-r><dt>工場設立</dt><dd>31<small>年目</small></dd></div>
+        <div class="stat" data-r data-d="1"><dt>職人</dt><dd>12<small>名</small></dd></div>
+      </dl>
+    </div>
+    <figure class="about-photo ph" data-r><img src="photos/tweezers.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="ピンセットで作業する職人の手元"></figure>
+  </section>
+
+  <section class="biz" id="business">
+    <div class="biz-side"><div><h2>主な事業</h2><p class="eyebrow">BUSINESS</p></div></div>
+    <div class="biz-list">
+      <article class="b1">
+        <figure class="ph" data-r><img src="photos/design-sketch.webp" width="1600" height="1236" loading="lazy" decoding="async" alt="ジュエリーのデザイン画と原型"></figure>
+        <div class="card" data-r>
+          <p class="no" aria-hidden="true">01</p>
+          <h3>CAD設計・原型製作</h3>
+          <p>デザインをCADで立体化し、製作のもととなる原型をつくります。</p>
+        </div>
+      </article>
+      <article class="b2">
+        <div class="txt" data-r>
+          <p class="no" aria-hidden="true">02</p>
+          <h3>磨き・石留め</h3>
+          <p>地金の表面を磨いて仕上げ、デザインに合わせて宝石を留めます。</p>
+        </div>
+        <figure class="big ph" data-r><img src="photos/polishing-ring.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="リングを研磨する職人の手元"></figure>
+        <figure class="sm ph" data-r data-d="1"><img src="photos/stone-setting-bw.webp" width="1067" height="1600" loading="lazy" decoding="async" alt="リングを手に取る職人の手元"></figure>
+      </article>
+      <article class="b3">
+        <figure class="ph" data-r><img src="photos/silver-rings.webp" width="1600" height="1600" loading="lazy" decoding="async" alt="シルバーのリング"></figure>
+        <div class="txt" data-r>
+          <p class="no" aria-hidden="true">03</p>
+          <h3>OEM製作</h3>
+          <p>ブランドや企業のご依頼に応じて、オリジナルジュエリーを製作します。</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="co">
+    <div class="co-info" id="company" data-r>
+      <p class="eyebrow">COMPANY</p>
+      <h2>会社概要</h2>
+      <dl class="tbl">
+        <div><dt>会社名</dt><dd>株式会社グレース</dd></div>
+        <div><dt>代表者</dt><dd>星山 安奈</dd></div>
+        <div><dt>所在地</dt><dd>〒400-0851<br>山梨県甲府市住吉3-26-16</dd></div>
+        <div><dt>工場・職人</dt><dd>工場設立31年目 ／ 職人12名</dd></div>
+      </dl>
+    </div>
+    <div class="co-map" id="access">
+      <div class="co-map-h"><p class="eyebrow">ACCESS</p><h2>アクセス</h2></div>
+      <iframe src="https://maps.google.com/maps?q=%E5%B1%B1%E6%A2%A8%E7%9C%8C%E7%94%B2%E5%BA%9C%E5%B8%82%E4%BD%8F%E5%90%893-26-16&amp;z=16&amp;hl=ja&amp;output=embed" title="株式会社グレースの地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p class="addr">〒400-0851 山梨県甲府市住吉3-26-16</p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2 data-r>お問い合わせ</h2>
+    <div data-r>
+      <p class="eyebrow">CONTACT</p>
+      <p class="contact-lead">製作・加工、OEMのご相談はお気軽にどうぞ。</p>
+      <div class="links">
+        <a href="tel:0552678944"><span>TEL/FAX</span><b>055-267-8944</b><svg aria-hidden="true" width="28" height="14" viewBox="0 0 28 14" fill="none" stroke="currentColor"><path d="M0 7h26M20 1l6 6-6 6"/></svg></a>
+        <a href="tel:09048269940"><span>携帯</span><b>090-4826-9940</b><svg aria-hidden="true" width="28" height="14" viewBox="0 0 28 14" fill="none" stroke="currentColor"><path d="M0 7h26M20 1l6 6-6 6"/></svg></a>
+        <a href="mailto:grace5k.yamanachi@gmail.com"><span>メール</span><b class="mail">grace5k.yamanachi@gmail.com</b><svg aria-hidden="true" width="28" height="14" viewBox="0 0 28 14" fill="none" stroke="currentColor"><path d="M0 7h26M20 1l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <p><b>GRACE</b>株式会社グレース<br>〒400-0851 山梨県甲府市住吉3-26-16</p>
+  <p>© 2026 株式会社グレース</p>
+</footer>
+
+<script>
+(function(){
+  var d=document,els=d.querySelectorAll('[data-r]');
+  if(!d.documentElement.classList.contains('js')||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')})}
+  else{var io=new IntersectionObserver(function(list){list.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.06});els.forEach(function(e){io.observe(e)})}
+  var m=d.getElementById('menu');
+  d.getElementById('menu-open').addEventListener('click',function(){m.showModal()});
+  d.getElementById('menu-close').addEventListener('click',function(){m.close()});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.close()})});
+})();
+</script>
+</body>
+</html>
